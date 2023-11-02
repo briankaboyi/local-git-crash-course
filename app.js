@@ -2,13 +2,21 @@ const button = document.querySelector('.button');
 
 button.addEventListener('click', function (e) {
   const button = e.target;
-  if (button.style.background === 'rgb(121, 203, 214)') {
-    button.style.background = 'rgb(214, 121, 121)';
-    button.style.color = 'white';
-    button.style.boxShadow = ' 0px 3px 10px -4px rgb(76, 87, 88)';
-  } else {
-    button.style.background = 'rgb(121, 203, 214)';
-    button.style.color = 'white';
-    button.style.boxShadow = ' 0px 3px 10px -4px rgb(76, 87, 88)';
+
+  if (button.classList.contains('default')) {
+    button.classList.remove('default');
+    button.classList.add('blue');
+    button.color = 'white';
+    button.boxShadow = '0px 3px 10px -4px rgb(76, 87, 88)';
+  } else if (button.classList.contains('blue')) {
+    button.classList.remove('blue');
+    button.classList.add('red');
+    button.color = 'white';
+    button.boxShadow = '0px 3px 10px -4px rgb(76, 87, 88)';
+  } else if (button.classList.contains('red')) {
+    button.classList.remove('red');
+    button.classList.add('default');
+    button.color = 'white';
+    button.boxShadow = '0px 3px 10px -4px rgb(76, 87, 88)';
   }
 });
